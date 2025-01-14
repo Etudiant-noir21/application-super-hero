@@ -80,14 +80,13 @@ btnSearch.addEventListener('click',(e)=>{
 
 
  function superHero(hero) {
-    try{
         fetch(`${proxyUrl}${apiUrl}${tokenAcce}/search/${hero}`,{
             method: "GET",
             redirect: "follow"
         })
         .then(response=> {
             if(!response.ok){
-                alert("Vous avez un probleme de connexion")
+                // alert("Vous avez un probleme de connexion")
                 throw new Error("Erreur probleme de connexion ", response)
             }
             return response.json()
@@ -113,11 +112,12 @@ btnSearch.addEventListener('click',(e)=>{
             }
             
         })
-    }catch(err){
-        console.error("Erreur :" + err.message);
+      .catch(err=>{
+        console.error("une erreur est survenue :",err);
         
-    }
+    })
 }
+
 const heroNames = [
     "Batman", "Spider-Man", "Iron Man", 
  "Hulk", "Wonder Woman", "Black Widow", "Wolverine", 
