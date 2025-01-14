@@ -87,6 +87,7 @@ btnSearch.addEventListener('click',(e)=>{
         })
         .then(response=> {
             if(!response.ok){
+                alert("Vous avez un probleme de connexion")
                 throw new Error("Erreur probleme de connexion ", response)
             }
             return response.json()
@@ -146,7 +147,7 @@ inputHero.addEventListener('input',(e)=>{
         heroNames.forEach(hero => {
           const li = document.createElement('li');
           li.textContent = hero;
-          
+
           li.addEventListener('click', () => {
             inputHero.value = hero; 
             listeSugg.innerHTML=''

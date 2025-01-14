@@ -20,7 +20,7 @@ body{
 }
 
 .container-fluid{
-    max-width: 600px;
+    max-width: 800px;
     width: 90%;
     background-color: #212121;
     padding: 20px;
