@@ -12,10 +12,11 @@ body{
     align-items: center;
     height: 100vh;
     color: white;
+    padding: 10px 20px;
 }
 .search input{
     background-color: #fff;
-    color: #fff;
+    color: #212121;
 }
 
 .container-fluid{
@@ -31,5 +32,21 @@ body{
         margin-top: 10px;
         width: 100%;
     }
+
+    .container-fluid{
+        width: 100%;
+    }
 }
-    
+
+#listeSugg{
+    width: 80%;
+    background-color: #fff;
+    color: #212121;
+    margin-top: 5px;
+    border-radius: 10px;
+}
+  
+#listeSugg li{
+    list-style: none;
+    cursor: pointer;
+}

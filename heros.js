@@ -78,6 +78,7 @@ btnSearch.addEventListener('click',(e)=>{
     inputHero.value = ''
 })
 
+
  function superHero(hero) {
     try{
         fetch(`${proxyUrl}${apiUrl}${tokenAcce}/search/${hero}`,{
@@ -116,3 +117,41 @@ btnSearch.addEventListener('click',(e)=>{
         
     }
 }
+const heroNames = [
+    "Batman", "Spider-Man", "Iron Man", 
+ "Hulk", "Wonder Woman", "Black Widow", "Wolverine", 
+    "Deadpool","Cyborg","Nightwing","Captain Marvel",
+    "Black Panther","Doctor Strange","Ant-Man"
+  ];
+const listeSugg = document.getElementById('listeSugg')
+inputHero.addEventListener('input',(e)=>{
+    console.log(e.target.value);
+    const suggestion = e.target.value.toLowerCase().trim()
+    if(!suggestion){
+     listeSugg.innerHTML = ''
+     return
+    }
+
+    const fitterHeroes = heroNames.filter(name=>{
+      name.toLocaleLowerCase().includes(suggestion)
+    })
+    
+    showSuggestions(fitterHeroes)
+    
+})
+
+    function showSuggestions(heroes) {
+        listeSugg.innerHTML=''
+      
+        heroNames.forEach(hero => {
+          const li = document.createElement('li');
+          li.textContent = hero;
+          
+          li.addEventListener('click', () => {
+            inputHero.value = hero; 
+            listeSugg.innerHTML=''
+          });
+      
+          listeSugg.appendChild(li);
+        });
+      }
