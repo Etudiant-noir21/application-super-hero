@@ -10,7 +10,7 @@ body{
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+   min-height: 100vh;
     color: white;
     padding: 10px 20px;
 }
@@ -19,15 +19,30 @@ body{
     color: #212121;
 }
 
+.titre{
+    font-size: 2rem;
+}
+.caractere{
+    font-size: 2rem;
+}
 .container-fluid{
-    max-width: 800px;
-    width: 90%;
+    /* max-width: 800px; */
+    width: 70%;
     background-color: #212121;
     padding: 20px;
     border-radius: 10px;
 }
 
-@media screen and (max-width:600px) {
+#btnSearch{
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    background-color: #333;
+}
+@media screen and (max-width:900px) {
     #btnSearch{
         margin-top: 10px;
         width: 100%;
@@ -35,6 +50,13 @@ body{
 
     .container-fluid{
         width: 100%;
+    }
+
+    .titre{
+        font-size: 18px;
+    }
+    .caractere{
+        font-size: 16px;
     }
 }
 
@@ -49,4 +71,5 @@ body{
 #listeSugg li{
     list-style: none;
     cursor: pointer;
+    font-size: 20px;
 }
